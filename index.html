@@ -1,0 +1,146 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>我们的故事</title>
+</head>
+
+<body onload="panduan()">
+<div id="box">
+  <div id="story">
+    <h3 align="center">&nbsp;Our Story &nbsp;&nbsp;我们的故事</h1>
+    <ul>
+      <li><span>&hearts;&nbsp;</span><a>2023年5月30日我们在和平精英相遇</a></li><div class="xian"></div>
+      <li><span>&hearts;&nbsp;</span><a>很幸运有"您"的陪伴</a></li><div class="xian"></div>
+      <li><span>&hearts;&nbsp;</span><a id="shijian"></a></li><div class="xian"></div>
+      <li><span>&hearts;&nbsp;</span><a id="result"></a></li><div class="xian"></div>
+      <li><span>&hearts;&nbsp;</span><a>Love you more than I can say!</a></li><div class="xian"></div>
+      <li><span>&hearts;&nbsp;</span><a>You are the first and only choice!</a></li><div class="xian"></div>
+      <li><span>&hearts;&nbsp;</span><a>最后祝"您"生日快乐！</a></li><div class="xian"></div>
+    </ul>
+    <p>&nbsp;往事如浮动光影的画卷，你便是那画中的人。你是山中的那泓泉水，带着甘甜而来，润我心田，你是花丛中的那一抹嫣红，带着幽香而来，沁我心脾，你是冬日里飘舞的雪花，带着浪漫而来，芬芳我的梦。你是朝霞中的那抹阳光，带着希望而来，璀璨我的生命。山水相依，云雾相绕，你是我此生最美的风景。</p>
+  </div>        
+</div>
+
+
+
+<style type="text/css">
+
+#box {
+	margin: 0 auto;
+    width: 600px;
+    height: 700px;
+    border:1px  solid #ccc;
+	background-color:#FCF;
+}
+
+#story ul{
+	float::left:
+}
+
+
+#story ul li{
+	list-style:none;
+    line-height:60px;
+  letter-spacing:2px;
+	
+}
+
+
+#story ul li a:result{
+	color:#000;
+	font-family:"楷体";
+	margin-left:10px;
+	}
+
+#story ul li a:hover{
+	color: #69F;
+}
+
+#story ul li span{
+	color:#F00;
+}
+.xian{
+	width:520px;
+	border-bottom:1px dashed #060;
+}
+
+
+
+@keyframes fadenum{
+	0%{opacity: 0;}
+	100%{opacity: 1;}
+	}
+p{
+	text-indent:2em;
+	padding:20px;
+	font-family:"仿宋";
+	color:#C03;
+	  letter-spacing:2px;
+	animation:fadenum 5s;}
+
+
+
+
+/*#result {
+	float:left;
+	border: 1px  solid #ccc;
+}
+#shijian{
+border-left: 2px solid #EFEFEF;
+	border-right: 2px solid #EFEFEF;
+	width:300px;
+	height:20px;
+	font-size:20px;
+	color:#000;
+	font-family:"楷体";
+	float:left;
+	margin:4px 0 0 20px;}
+*/
+</style>
+
+
+<script type="text/jscript">
+function panduan() {
+    var result = document.getElementById('result');
+    //var mytime = new Date(document.getElementById('mytime').value);
+	var mytime = new Date('2023,05,30');
+    // 获取当前日期
+    var date = new Date();
+    var day, hour, minute, second, interval;
+    // 计算相差几天的算法
+    interval = date - mytime;
+    interval /= 1000;
+    day = Math.round((interval / 60 / 60 / 24));
+    hour = Math.round(interval / 60 / 60 % 24);
+    minute = Math.round(interval / 60 % 60);
+    second = Math.round(interval % 60);
+    // 页面显示结果
+    //result.innerHTML = day + "天" + hour + "时" + minute + "分" + second + "秒";
+	result.innerHTML = "刚好是我们相识的第" + day + "天";
+}
+
+
+//获取时间
+function time()
+{
+ var sj=new Date();
+ var nian=sj.getFullYear();
+ var yue=sj.getMonth()+1;
+ var ri=sj.getDate();
+ var xingqi=sj.getDay();
+ var shi=sj.getHours();
+ var fen=sj.getMinutes();
+ var miao=sj.getSeconds();
+ document.getElementById("shijian").innerHTML="现在的时间是：“"+nian+"年"+yue+"月"+ri+"日 星期"+"日一二三四五六".charAt(sj.getDay())+" "+shi+":"+fen+":"+miao+"”";
+ setTimeout("time()",1);
+}
+time();
+
+
+</script>
+
+
+
+</body>
+</html>
