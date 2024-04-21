@@ -31,90 +31,90 @@
                 </p>
                 <p>2024年4月21日&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
         </div>
-    </差异>
+    </div>
 
-    <风格类型=“文本/css“>
-#方框{
-            边缘: 0 汽车;
-            宽度: 600像素;
-            高度: 700像素;
-            边界: 1像素 固体# ccc
-            背景颜色:# FCF；
+    <style type="text/css">
+        #box {
+            margin: 0 auto;
+            width: 600px;
+            height: 700px;
+            border: 1px solid #ccc;
+            background-color: #FCF;
         }
 
-#故事ul{
-            漂浮物: 左边的;
-        }
-
-
-#李的故事{
-            列表样式: 没有人;
-            行高: 60像素;
-            字母间距: 2像素;
-
+        #story ul {
+            float: left;
         }
 
 
-#阿利故事:结果 {
-            颜色: #000;
-            字体系列: "楷体";
-            左边距: 10像素;
-        }
+        #story ul li {
+            list-style: none;
+            line-height: 60px;
+            letter-spacing: 2px;
 
-#阿利故事:盘旋 {
-            颜色:# 69F
-        }
-
-#故事ul li span{
-            颜色:# F00
-        }
-
-。西安（地名）{
-            宽度: 520像素;
-            边框-底部: 1像素 虚线 #060;
         }
 
 
+        #story ul li a:result {
+            color: #000;
+            font-family: "楷体";
+            margin-left: 10px;
+        }
 
-        @关键帧fadenum{
+        #story ul li a:hover {
+            color: #69F;
+        }
+
+        #story ul li span {
+            color: #F00;
+        }
+
+        .xian {
+            width: 520px;
+            border-bottom: 1px dashed #060;
+        }
+
+
+
+        @keyframes fadenum {
             0% {
-                不透明: 0;
+                opacity: 0;
             }
 
             100% {
-                不透明: 1;
+                opacity: 1;
             }
         }
 
-#内容{
-            文本缩进: 2全身长的;
-            填料: 20像素;
-            字体系列: "仿宋";
-            颜色:# C03
-            字母间距: 2像素;
-            动画: fadenum 5s;
+        #content {
+            text-indent: 2em;
+            padding: 20px;
+            font-family: "仿宋";
+            color: #C03;
+            letter-spacing: 2px;
+            animation: fadenum 5s;
         }
 
         p {
-            漂浮物: 正确;
-            字体系列: "仿宋";
-            字体粗细: 大胆的;
+            float: right;
+            font-family: "仿宋";
+            font-weight: bold;
 
         }
 
 
 
-        /* #结果{
-浮动:左；
-边框:1px纯色# ccc
+        /*#result {
+	float:left;
+	border: 1px  solid #ccc;
 }
-#石坚{
-border-left:2px solid # EFEFEF；
-border-right:2px solid # EFEFEF；
-宽度:300px
-高度:20px
-字体大小:20px
-颜色:# 000；
+#shijian{
+border-left: 2px solid #EFEFEF;
+	border-right: 2px solid #EFEFEF;
+	width:300px;
+	height:20px;
+	font-size:20px;
+	color:#000;
 	font-family:"楷体";
 	float:left;
 	margin:4px 0 0 20px;}
@@ -148,7 +148,7 @@ function time()
 {
  var sj=new Date();
  var nian=sj.getFullYear();
-var yue = SJ . getmonth（）+1；
+ var yue=sj.getMonth()+1;
  var ri=sj.getDate();
  var xingqi=sj.getDay();
  var shi=sj.getHours();
