@@ -1,169 +1,211 @@
-<!DOCTYPE html
-    PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
-
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>我们的故事</title>
+    <title>Our Love Story</title>
+    <style type="text/css">
+        #box {
+            margin: 0 auto;
+            width: 600px;
+            height: 810px;
+            border: 1px solid #f99;
+            background-color: #fff5f9;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            padding: 20px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        #box::before {
+            content: "";
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,230,240,0.8) 0%, rgba(255,245,249,0) 70%);
+            z-index: 0;
+        }
+
+        #story {
+            position: relative;
+            z-index: 1;
+        }
+
+        #story h3 {
+            font-family: "Arial", sans-serif;
+            color: #e84393;
+            text-align: center;
+            font-size: 28px;
+            margin-bottom: 30px;
+            text-shadow: 0 2px 3px rgba(0,0,0,0.1);
+            border-bottom: 2px dashed #f99;
+            padding-bottom: 15px;
+        }
+
+        #story ul {
+            float: left;
+            width: 100%;
+            padding: 0;
+        }
+
+        #story ul li {
+            list-style: none;
+            line-height: 55px;
+            letter-spacing: 1px;
+            font-size: 18px;
+        }
+
+        #story ul li a {
+            color: #555;
+            font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: inline-block;
+            padding: 0 5px;
+        }
+
+        #story ul li a:hover {
+            color: #e84393;
+            transform: translateX(5px);
+        }
+
+        #story ul li span {
+            color: #ff6b6b;
+            font-size: 22px;
+            vertical-align: middle;
+        }
+
+        .xian {
+            width: 100%;
+            border-bottom: 1px dashed #fcc;
+            margin: 5px 0;
+        }
+
+        @keyframes fadenum {
+            0% { opacity: 0; transform: translateY(20px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+
+        #content {
+            text-indent: 2em;
+            padding: 25px;
+            font-family: "Georgia", serif;
+            color: #d65db1;
+            letter-spacing: 1px;
+            animation: fadenum 3s;
+            line-height: 1.8;
+            background: rgba(255, 245, 249, 0.7);
+            border-radius: 10px;
+            margin-top: 20px;
+            font-style: italic;
+            border-left: 3px solid #ff9dce;
+        }
+
+        #story > p {
+            float: right;
+            font-family: "Georgia", serif;
+            font-weight: bold;
+            color: #888;
+            margin-top: 15px;
+            font-size: 14px;
+        }
+        
+        /* 特别为时间显示添加的彩虹渐变效果 */
+        #shijian {
+            background: linear-gradient(90deg, 
+                #ff6b6b, #ff8e8e, #ffb6b6, 
+                #ff9de6, #d65db1, #845ec2);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            font-weight: bold;
+            font-size: 20px;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            animation: rainbow 8s infinite alternate;
+            display: inline-block;
+            padding: 3px 8px;
+            border-radius: 5px;
+            letter-spacing: 1px;
+        }
+        
+        @keyframes rainbow {
+            0% { background-position: 0% 50%; }
+            100% { background-position: 100% 50%; }
+        }
+        
+        #result {
+            color: #ff7675;
+            font-weight: bold;
+            font-size: 19px;
+            letter-spacing: 0.5px;
+        }
+    </style>
 </head>
 
 <body onload="panduan()">
     <div id="box">
         <div id="story">
-            <h3 align="center">&nbsp;Our Story &nbsp;&nbsp;我们的故事</h1>
-                <ul>
-                    <li><span>&hearts;&nbsp;</span><a>2025年1月9日我们相遇</a></li>
-                    <div class="xian"></div>
-                    <li><span>&hearts;&nbsp;</span><a>同学，很高兴能够遇到"您"</a></li>
-                    <div class="xian"></div>
-                    <li><span>&hearts;&nbsp;</span><a id="shijian"></a></li>
-                    <div class="xian"></div>
-                    <li><span>&hearts;&nbsp;</span><a id="result"></a></li>
-                    <div class="xian"></div>
-                    <li><span>&hearts;&nbsp;</span><a>Love you more than I can say!</a></li>
-                    <div class="xian"></div>
-                    <li><span>&hearts;&nbsp;</span><a>You are the first and only choice!</a></li>
-                    <div class="xian"></div>
-                    <li><span>&hearts;&nbsp;</span><a>最后祝"您"生日快乐！</a></li>
-                    <div class="xian"></div>
-                </ul>
-                <p id="content">&nbsp;在这茫茫人海中相逢，遇见你，是我一生的喜悦。眼中星光闪烁，心中涌动暖流，遇见你，让我心中充满了感慨和喜悦。
-                </p>
-                <p>202 年 月 日&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+            <h3>&nbsp;Our Love Story &nbsp;&nbsp;我们的故事</h3>
+            <ul>
+                <li><span>&hearts;</span><a>We met on April 23, 2025!</a></li>
+                <div class="xian"></div>
+                <li><span>&hearts;</span><a>Ashley, it's great to meet you!</a></li>
+                <div class="xian"></div>
+                <li><span>&hearts;</span><a id="shijian"></a></li>
+                <div class="xian"></div>
+                <li><span>&hearts;</span><a id="result"></a></li>
+                <div class="xian"></div>
+                <li><span>&hearts;</span><a>Love you more than I can say!</a></li>
+                <div class="xian"></div>
+                <li><span>&hearts;</span><a>You are the first and only choice!</a></li>
+                <div class="xian"></div>
+                <li><span>&hearts;</span><a>I hope that in the days to come, we will walk together!</a></li>
+                <div class="xian"></div>
+            </ul>
+            <p id="content">I want to hold your hand and see the world's beauty, to be your support when you're tired, to go through the long years with you, and to write our future together!</p>
+            <p>July 1, 2025 &nbsp;&nbsp;&nbsp;&nbsp;</p>
         </div>
     </div>
 
-    <style type="text/css">
-        #box {
-            margin: 0 auto;
-            width: 600px;
-            height: 700px;
-            border: 1px solid #ccc;
-            background-color: #FCF;
+    <script type="text/javascript">
+        function panduan() {
+            var result = document.getElementById('result');
+            var mytime = new Date('2025,04,23');
+            var date = new Date();
+            var interval = date - mytime;
+            interval = Math.max(interval, 0); // 确保不会是负数
+            interval /= 1000;
+            var day = Math.round((interval / 60 / 60 / 24));
+            // 页面显示结果
+            result.innerHTML = "It happened to be the " + day + " th day we met!";
         }
 
-        #story ul {
-            float: left;
+        // 获取时间
+        function time() {
+            var sj = new Date();
+            var nian = sj.getFullYear();
+            var yue = sj.getMonth() + 1;
+            var ri = sj.getDate();
+            var shi = sj.getHours().toString().padStart(2, '0');
+            var fen = sj.getMinutes().toString().padStart(2, '0');
+            var miao = sj.getSeconds().toString().padStart(2, '0');
+            
+            // 星期名称数组
+            var weekdays = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+            var weekday = weekdays[sj.getDay()];
+            
+            document.getElementById("shijian").innerHTML = "Now: " + nian + "-" + 
+                yue.toString().padStart(2, '0') + "-" + 
+                ri.toString().padStart(2, '0') + " " + 
+                weekday + " " + 
+                shi + ":" + fen + ":" + miao;
+                
+            setTimeout(time, 1000);
         }
-
-
-        #story ul li {
-            list-style: none;
-            line-height: 60px;
-            letter-spacing: 2px;
-
-        }
-
-
-        #story ul li a:result {
-            color: #000;
-            font-family: "楷体";
-            margin-left: 10px;
-        }
-
-        #story ul li a:hover {
-            color: #69F;
-        }
-
-        #story ul li span {
-            color: #F00;
-        }
-
-        .xian {
-            width: 520px;
-            border-bottom: 1px dashed #060;
-        }
-
-
-
-        @keyframes fadenum {
-            0% {
-                opacity: 0;
-            }
-
-            100% {
-                opacity: 1;
-            }
-        }
-
-        #content {
-            text-indent: 2em;
-            padding: 20px;
-            font-family: "仿宋";
-            color: #C03;
-            letter-spacing: 2px;
-            animation: fadenum 5s;
-        }
-
-        p {
-            float: right;
-            font-family: "仿宋";
-            font-weight: bold;
-
-        }
-
-
-
-        /*#result {
-	float:left;
-	border: 1px  solid #ccc;
-}
-#shijian{
-border-left: 2px solid #EFEFEF;
-	border-right: 2px solid #EFEFEF;
-	width:300px;
-	height:20px;
-	font-size:20px;
-	color:#000;
-	font-family:"楷体";
-	float:left;
-	margin:4px 0 0 20px;}
-*/
-    </style>
-
-
-    <script type="text/jscript">
-function panduan() {
-    var result = document.getElementById('result');
-    //var mytime = new Date(document.getElementById('mytime').value);
-	var mytime = new Date('2023,05,30');
-    // 获取当前日期
-    var date = new Date();
-    var day, hour, minute, second, interval;
-    // 计算相差几天的算法
-    interval = date - mytime;
-    interval /= 1000;
-    day = Math.round((interval / 60 / 60 / 24));
-    hour = Math.round(interval / 60 / 60 % 24);
-    minute = Math.round(interval / 60 % 60);
-    second = Math.round(interval % 60);
-    // 页面显示结果
-    //result.innerHTML = day + "天" + hour + "时" + minute + "分" + second + "秒";
-	result.innerHTML = "刚好是我们相遇的第" + day + "天";
-}
-
-
-//获取时间
-function time()
-{
- var sj=new Date();
- var nian=sj.getFullYear();
- var yue=sj.getMonth()+1;
- var ri=sj.getDate();
- var xingqi=sj.getDay();
- var shi=sj.getHours();
- var fen=sj.getMinutes();
- var miao=sj.getSeconds();
- document.getElementById("shijian").innerHTML="现在的时间是：“"+nian+"年"+yue+"月"+ri+"日 星期"+"日一二三四五六".charAt(sj.getDay())+" "+shi+":"+fen+":"+miao+"”";
- setTimeout("time()",1);
-}
-time();
-
-
-</script>
-
-
-
+        
+        time();
+    </script>
 </body>
-
 </html>
